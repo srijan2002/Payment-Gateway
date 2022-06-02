@@ -3,7 +3,9 @@ const app = express();
 const routes = require('./routes');
 const morgan = require('morgan');
 let port = process.env.PORT || 3000;
+var cors = require('cors')
 
+app.use(cors()) 
 app.set('view engine','ejs');
 app.use(morgan('dev'));
 app.use(express.json());
